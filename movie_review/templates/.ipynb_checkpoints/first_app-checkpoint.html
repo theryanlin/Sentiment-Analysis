@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>First app</title>
+    </head>
+        <meta charset="UTF-8">
+        <title>First app</title>
+    <link rel="stylesheet" href="{{ url_for('static', 
+        filename='style.css')}}">
+    </head>
+    <body>
+
+{% from "_formhelper.html" import render_field %}
+
+<div> What is your name? </div>
+<form method=post action="/hello">
+    <dl>
+        {{ render_field(form.sayhello) }}
+    </dl>
+    <input type=submit value='Say Hello' name='submit_btn'>
+</form>
+    </body>
+</html>
